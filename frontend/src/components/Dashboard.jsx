@@ -3,8 +3,8 @@ import { io } from 'socket.io-client';
 import WorldMap from './WorldMap';
 import Header from './Header';
 import Sidebar from './Sidebar';
-
-const socket = io('http://localhost:5000');
+const BACKEND_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+const socket = io(BACKEND_URL);
 
 function Dashboard() {
   const [list, setList] = useState([]);
